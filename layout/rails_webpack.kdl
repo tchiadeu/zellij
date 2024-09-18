@@ -37,10 +37,6 @@ layout {
         args "console"
         name "Database"
         start_suspended true
-        x "10%"
-        y "10%"
-        width "80%"
-        height "80%"
       }
     }
   }
