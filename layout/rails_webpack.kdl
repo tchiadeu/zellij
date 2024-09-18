@@ -1,0 +1,59 @@
+layout {
+  tab focus=true hide_floating_panes=true name="Code" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" {
+      pane stacked=true {
+        pane {
+          command "rails"
+          args "server"
+          name "Server"
+          start_suspended true
+        }
+        pane {
+          command "yarn" 
+          args "build" "--watch"
+          name "JS Builder"
+          start_suspended true
+        }
+        pane {
+          command "bundle"
+          args "exec" "guard"
+          name "Guard"
+          expanded true
+          start_suspended true
+        }
+      }
+      pane size="70%" {
+        command "nvim"
+        name "Editor"
+        focus true
+      }
+    }
+    floating_panes {
+      pane {
+        command "rails"
+        args "console"
+        name "Database"
+        start_suspended true
+        x "10%"
+        y "10%"
+        width "80%"
+        height "80%"
+      }
+    }
+  }
+  tab name="General" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane {
+      borderless true
+      name "Terminal"
+    }
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+}
