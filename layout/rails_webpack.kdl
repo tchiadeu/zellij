@@ -12,8 +12,8 @@ layout {
           start_suspended true
         }
         pane {
-          command "yarn" 
-          args "build" "--watch"
+          command "node" 
+          args "/home/tchiadeu/.config/js_builder/build-watch.js"
           name "JS Builder"
           start_suspended true
         }
